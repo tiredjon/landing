@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Мята Platinum</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══════════════ MAIN PAGE ═══════════════ -->
+  <div id="page-main" class="page active">
+    <div class="hero">
+      <div class="hero-content">
+        <div class="logo-circle">М</div>
+        <div class="brand-name">Мята<br>Platinum</div>
+        <div class="hero-sub">
+          <strong>Расслабьтесь в душевной атмосфере</strong><br>
+          25 брендов табака — более 500 вкусов
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-list">
+
+      <button class="link-btn" onclick="showPage('menu')">
+        <div class="btn-icon">📖</div>
+        <div class="btn-text">
+          <div class="btn-title">Наше меню</div>
+        </div>
+      </button>
+
+      <a class="link-btn" href="tel:+54985395489"> <!--вставь номер админа-->
+        <div class="btn-icon">📞</div>
+        <div class="btn-text">
+          <div class="btn-title">Позвонить</div>
+          <div class="btn-sub">Бронь столов</div>
+        </div>
+      </a>
+
+      <button class="link-btn" onclick="showPage('reviews')">
+        <div class="btn-icon">✍️</div>
+        <div class="btn-text">
+          <div class="btn-title">Отзывы</div>
+          <div class="btn-sub">Переходите</div>
+        </div>
+      </button>
+
+      <a class="link-btn" href="https://t.me/___" target="_blank" rel="noopener"><!--вставь в ___ свой тг-->
+        <div class="btn-icon">💰</div>
+        <div class="btn-text">
+          <div class="btn-title">Кешбэк</div>
+          <div class="btn-sub">Telegram Bot</div>
+        </div>
+      </a>
+
+      <a class="link-btn" href="https://maps.app.goo.gl/___" target="_blank" rel="noopener"><!--вставь в ___ свой адрес-->
+        <div class="btn-icon">📍</div>
+        <div class="btn-text">
+          <div class="btn-title">Локация</div>
+          <div class="btn-sub">Гугл карты</div>
+        </div>
+      </a>
+
+      <a class="link-btn" href="https://t.me/" target="_blank" rel="noopener"><!--вставь в ___ свой тг-->
+        <div class="btn-icon">✈️</div>
+        <div class="btn-text">
+          <div class="btn-title">Напишите нам</div>
+          <div class="btn-sub">Telegram</div>
+        </div>
+      </a>
+
+      <div class="divider"></div>
+
+      <a class="link-btn" href="https://www.instagram.com/myata_platinum_tashkent?igsh=OHR1cXZ2cDB3YXJ6" target="_blank" rel="noopener"><!--вставь в ___ свою инсту-->
+        <div class="btn-icon">📷</div>
+        <div class="btn-text">
+          <div class="btn-title">Instagram</div>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="info-section">
+      <div class="info-block">
+        <h3>🕒📆 Режим работы 📆🕒</h3>
+        <div>Вс-Чт: 12:00–03:00</div>
+        <div>Пт-Сб: 12:00–04:00</div>
+      </div>
+      <div class="info-block">
+        <h3>🔖 Акции 🔖</h3>
+        <div class="promo-item">При заказе одного из наших сетов вы получаете 3 литра пива абсолютно бесплатно!</div>
+        <div class="promo-item">С 12:00–16:00 все классические кальяны по сказочной цене — всего 150,000 сум!</div>
+        <div class="promo-item">Скидка 20% всем именинникам</div>
+      </div>
+    </div>
+
+    <div class="footer-credit">
+      Сделано на <a href="https://taplink.ru/" target="_blank" rel="noopener">Taplink.ru</a>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════ MENU PAGE ═══════════════ -->
+  <div id="page-menu" class="page">
+    <div class="page-header">
+      <button class="back-btn" onclick="showPage('main')">&#8592;</button>
+      <div class="page-title">Наше меню</div>
+    </div>
+
+    <div class="service-note">*** К счёту добавляется сервисный сбор 15%.</div>
+
+    <div class="cat-tabs">
+      <button class="cat-tab active" onclick="filterCat('all', this)">Основное меню</button>
+      <button class="cat-tab" onclick="filterCat('drinks', this)">Напитки</button>
+      <button class="cat-tab" onclick="filterCat('alcohol', this)">Алкоголь</button>
+      <button class="cat-tab" onclick="filterCat('hookah', this)">Кальяны</button>
+    </div>
+
+    <div class="search-wrap">
+      <div class="search-wrap-inner">
+        <input class="search-input" type="text" placeholder="Поиск" oninput="searchMenu(this.value)" />
+        <span class="search-icon">🔍</span>
+      </div>
+    </div>
+
+    <!-- Category cards grid -->
+    <div id="cat-grid" class="cat-cards">
+
+      <div class="cat-card" onclick="showItems('soups')">
+        <img src="https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=60" alt="Супы" loading="lazy">
+        <div class="cat-card-overlay"><span class="cat-card-title">Супы</span></div>
+      </div>
+
+      <div class="cat-card" onclick="showItems('burgers')">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=60" alt="Бургеры" loading="lazy">
+        <div class="cat-card-overlay"><span class="cat-card-title">Бургеры и Сэндвич</span></div>
+      </div>
+
+      <div class="cat-card" onclick="showItems('asian')">
+        <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&q=60" alt="Паназиатское" loading="lazy">
+        <div class="cat-card-overlay"><span class="cat-card-title">Паназиатское</span></div>
+      </div>
+
+      <div class="cat-card" onclick="showItems('hotsnacks')">
+        <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=60" alt="Горячие закуски" loading="lazy">
+        <div class="cat-card-overlay"><span class="cat-card-title">Горячие закуски</span></div>
+      </div>
+
+      <div class="cat-card" onclick="showItems('coldsnacks')">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=60" alt="Холодные закуски" loading="lazy">
+        <div class="cat-card-overlay"><span class="cat-card-title">Холодные закуски</span></div>
+      </div>
+
+      <div class="cat-card" onclick="showItems('steaks')">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=60" alt="Стейки" loading="lazy">
+        <div class="cat-card-overlay"><span class="cat-card-title">Стейки</span></div>
+      </div>
+
+    </div>
+
+    <!-- Items list (shown after clicking a category) -->
+    <div id="items-view" class="items-view">
+      <div class="items-view-header">
+        <button onclick="backToCats()">← Назад</button>
+        <span id="items-view-title"></span>
+      </div>
+      <div id="items-list" class="items-list"></div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════ REVIEWS PAGE ═══════════════ -->
+  <div id="page-reviews" class="page">
+    <div class="page-header">
+      <button class="back-btn" onclick="showPage('main')">&#8592;</button>
+      <div class="page-title">Отзывы</div>
+    </div>
+    <div class="reviews-content">
+      <a class="reviews-btn" href="https://maps.google.com/search/Myata+Platinum+Tashkent/reviews" target="_blank" rel="noopener">
+        <div class="reviews-btn-icon google-icon">🗺️</div>
+        <div class="reviews-btn-text">
+          <strong>Оставить отзыв</strong>
+          <span>Google Maps</span>
+        </div>
+      </a>
+      <a class="reviews-btn" href="https://t.me/tiredjon" target="_blank" rel="noopener">
+        <div class="reviews-btn-icon tg-icon">✈️</div>
+        <div class="reviews-btn-text">
+          <strong>Напишите нам</strong>
+          <span>Telegram</span>
+        </div>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════ CART BAR ═══════════════ -->
+  <div id="cart-bar" class="cart-bar" onclick="openCart()">
+    <span class="cart-bar-text">Посмотреть заказ</span>
+    <span class="cart-count" id="cart-count">0</span>
+  </div>
+
+
+  <!-- ═══════════════ CART MODAL ═══════════════ -->
+  <div id="cart-modal" class="modal-overlay" onclick="closeCartIfOverlay(event)">
+    <div class="modal-sheet">
+      <div class="modal-handle"></div>
+      <div class="modal-header">
+        <span class="modal-title">Ваш заказ</span>
+        <button class="modal-close" onclick="closeCart()">✕</button>
+      </div>
+      <div id="cart-items-container" class="cart-items">
+        <div class="cart-empty">Корзина пуста</div>
+      </div>
+      <div id="cart-total-row" class="cart-total" style="display:none;">
+        <span>Итого</span>
+        <span id="cart-total-amount">0 сум</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
